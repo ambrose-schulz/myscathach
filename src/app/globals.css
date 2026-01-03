@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+@theme {
+    --color-primary: rgb(107 36 24);
+    --color-primary-hover: #8a3020;
+    --color-background-light: #F5E6D3;
+    --color-background-dark: #F5E6D3;
+    --color-surface-dark: #EBDCC8;
+    --color-surface-light: #FAF3EA;
+    --color-border-dark: #D4C5B0;
+    --color-text-main: #4A1A12;
+    --color-text-muted: #7D5A50;
+
+    --font-display: "Lexend", sans-serif;
+    --font-sans: "Lexend", sans-serif;
+}
+
 :root {
     --foreground-rgb: 74, 26, 18;
     --background-start-rgb: 245, 230, 211;

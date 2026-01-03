@@ -7,12 +7,12 @@ const Navbar = () => {
             <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between gap-4">
                     <div className="flex items-center gap-2">
-                        <div className="text-primary p-1 rounded-lg">
+                        <div className="text-primary p-1 rounded-lg text-primary">
                             <span className="material-symbols-outlined text-[32px]">menu_book</span>
                         </div>
-                        <a className="text-xl font-bold tracking-tight text-primary hidden sm:block" href="#">
+                        <Link className="text-xl font-bold tracking-tight text-primary hidden sm:block" href="/">
                             Truyện<span className="text-text-main">Hay</span>
-                        </a>
+                        </Link>
                     </div>
                     <div className="hidden md:flex flex-1 max-w-md mx-4">
                         <div className="relative w-full group">
@@ -27,18 +27,62 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className="hidden lg:flex items-center gap-6">
-                        <a className="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">
+                        <Link className="text-sm font-medium text-text-main hover:text-primary transition-colors" href="/">
                             Trang chủ
-                        </a>
-                        <a className="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#">
+                        </Link>
+                        <Link className="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="/genres">
                             Thể loại
-                        </a>
-                        <a className="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#">
+                        </Link>
+                        <Link className="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="/search-advanced">
                             Tìm nâng cao
-                        </a>
+                        </Link>
                     </div>
                     <div className="flex items-center gap-3">
-                        {/* Notifications and Auth buttons */}
+                        <div className="relative group">
+                            <button
+                                className="relative flex items-center justify-center p-2 rounded-full text-text-muted hover:bg-surface-dark hover:text-primary transition-all mr-1 outline-none"
+                                title="Thông báo"
+                            >
+                                <span className="material-symbols-outlined text-[24px]">notifications</span>
+                                <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[10px] font-bold text-white ring-2 ring-surface-light">
+                                    3
+                                </span>
+                            </button>
+                            <div className="absolute right-0 top-full mt-2 w-80 sm:w-96 bg-surface-light rounded-xl shadow-2xl border border-border-dark overflow-hidden hidden group-hover:block z-50 origin-top-right animate-in fade-in slide-in-from-top-2 duration-200">
+                                <div className="px-4 py-3 border-b border-border-dark flex items-center justify-between bg-surface-dark/50 backdrop-blur-sm">
+                                    <h3 className="font-bold text-text-main text-sm">Thông báo</h3>
+                                    <button className="text-xs font-medium text-primary hover:text-primary-hover transition-colors">
+                                        Đánh dấu đã đọc
+                                    </button>
+                                </div>
+                                <div className="max-h-[400px] overflow-y-auto">
+                                    <div className="p-4 border-b border-border-dark/50 bg-surface-dark/30 hover:bg-surface-dark/60 transition-colors cursor-pointer flex gap-3">
+                                        <div className="shrink-0">
+                                            <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center border border-primary/10">
+                                                <span className="material-symbols-outlined text-[20px]">menu_book</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p className="text-sm text-text-main line-clamp-2">
+                                                <span className="font-bold">Thiên Đạo Đồ Thư Quán</span> vừa cập nhật chương mới.
+                                            </p>
+                                            <p className="text-xs font-semibold text-primary mt-1">Chương 2342: Hư Không</p>
+                                            <p className="text-[10px] text-text-muted mt-1.5 font-medium">Vừa xong</p>
+                                        </div>
+                                        <div className="shrink-0">
+                                            <div className="w-2 h-2 rounded-full bg-red-500 mt-1.5"></div>
+                                        </div>
+                                    </div>
+                                    {/* More notification items... */}
+                                </div>
+                                <Link
+                                    className="block p-3 text-center text-sm font-medium text-primary hover:bg-surface-dark/50 transition-colors border-t border-border-dark"
+                                    href="/notifications"
+                                >
+                                    Xem tất cả thông báo
+                                </Link>
+                            </div>
+                        </div>
                         <div className="flex items-center gap-3">
                             <Link
                                 href="/login"
